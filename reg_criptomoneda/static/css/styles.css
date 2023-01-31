@@ -1,0 +1,163 @@
+  
+  header {
+ 
+  background-image: url(https://blog.fasset.com/wp-content/uploads/2022/01/Blog-Featured-Image-Nov21-10-2.png);
+  background-size: cover;
+  background-position:center;
+  background-color: var(--primary);
+  color: burlywood;
+  font-variant-position:initial ;
+  align-content:;
+  font-size: 1.4em;
+  font-weight: bold;
+  
+  
+}
+footer{
+  background-image: url(https://blog.fasset.com/wp-content/uploads/2022/01/Blog-Featured-Image-Nov21-10-2.png);
+  background-size: cover;
+  background-position: center;
+  background-color: var(--primary);
+  color: var(--primary-inverse);
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 50px 1fr auto;
+  margin: 0 auto;
+}
+
+p.error {
+  color:rgb(255, 85, 0);
+  font-weight: bold;
+  font-size: 0,8em;
+}
+
+.lista-vacia{
+color: red;
+font-weight: bold;
+font-size: 0,8em;
+
+}
+
+.h2 {
+  text-align: center;
+}
+
+
+.number {
+text-align: right;
+}
+
+.return {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  justify-content:space-between;
+  padding: 2 1rem;
+  max-width: 800px;
+  gap: 15em;
+  
+}
+
+.coin_from {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  height: 100%;
+
+}
+
+.coin_to {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  height: 100%;
+}
+
+.quantity_from {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  height: 100%;
+}  
+
+.quantity_to {
+  display:grid;
+  justify-content: space-between;
+  gap: 10px;
+  height: 100%;
+  width:120px;
+
+}
+
+.pu {
+  display:flex;
+  text-align: right;
+  height: 100%;
+  justify-content: end;
+  gap: 10px;
+  margin-left: 600px;
+  margin-top: 15px;
+
+}
+
+
+.boton-borrar{
+border-radius: 10px;  
+border-style: solid;  
+display: inline-flexbox;
+height: 20px;
+padding: 0;
+vertical-align: top;
+width: 160px;
+margin-left: -400;
+margin-top: 100;
+
+}
+
+.boton-aceptar {  
+font-family: inherit;
+font-size: inherit;
+line-height: inherit;
+position:absolute;
+border: none;
+background: none;
+cursor: pointer;
+padding: 0;
+
+}
+
+
+.boton_volver {
+display: inline-block;
+height: 45px;
+padding: 0;
+margin-right: 0;
+width: 100px;
+margin-left: 350;
+margin-top: 50;
+
+}
+
+
+.boton-consultar {
+  
+display: inline-block;
+height: 65px;
+padding: 0;
+margin-right: 0;
+width: 125px;
+margin-left: 350;
+margin-top: -85;
+
+}
+
+

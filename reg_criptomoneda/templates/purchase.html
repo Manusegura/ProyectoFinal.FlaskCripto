@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav class="container">
+    <ul>
+    <li>
+            <a href="/">Inicio</a>
+        </li>
+        <li>
+            <a href="/status">Status</a>
+        </li>
+    </ul>
+</nav>
+<h1>Compra de Criptomonedas</h1>
+
+<article>
+    <table>
+    <h2>Comprar criptomoneda</h2>
+    <form action="/purchase" method="post">
+            {{ form.csrf_token }}
+
+        <div class="grid">
+            <div class="coin_from">
+            {{ form.coin_from.label }}
+            {{ form.coin_from }}        
+            {% if form.coin_from.errors %}
+                {% for error in form.coin_from.errors %}
+                <p class="error">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+            </div>
+
+            <div class="coin_to">
+            {{ form.coin_to.label }}
+            {{ form.coin_to }}
+            {% if form.coin_to.errors %}
+                {% for error in form.coin_from.errors %}
+                    <p class="error">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+            </div>
+        </div>
+
+        <div class="grid"> 
+            <div class="quantity_from">
+            {{ form.quantity_from.label }}
+            {{ form.quantity_from }}
+            {% if form.quantity_from.errors %}
+                {% for error in form.quantity_from.errors %}
+                    <p class="error">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+            </div> 
+        
+        
+            <div class="quantity_to">
+                <label for="cantidad_to">Q: </label>
+                <p class="paper-label"> {{ quantity_to }}</p>
+            </div>
+        </div>
+        
+        <div class="boton-consultar">
+            {{ form.calcular}}
+            
+        </div>
+                
+                    
+                
+                
+            
+            </div>
+        <div class="grid">
+            <div class="pu">
+            <label for="precio_unitario">P.U: </label>
+            <p class="paper-label"> {{ PU }}</p>
+
+            </div>    
+
+        <div class="boton-aceptar">
+            {{form.borrar }}
+        </div>
+
+        <div class="boton-borrar">
+            {{form.aceptar}}
+        </div>    
+    </form>
+    </table>
+</article>
+
+{% endblock %}

@@ -1,1 +1,1 @@
-from reg_criptomoneda import app
+from reg_criptomoneda import *
