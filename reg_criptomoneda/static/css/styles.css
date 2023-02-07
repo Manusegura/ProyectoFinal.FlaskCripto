@@ -1,26 +1,30 @@
   
-  header {
- 
-  background-image: url(https://blog.fasset.com/wp-content/uploads/2022/01/Blog-Featured-Image-Nov21-10-2.png);
+header {
+
+  height: 250px;  
+  background-image: url(https://www.etoro.com/wp-content/uploads/2020/07/04_02_20-3424-Crypto-new-blog-post.jpg);
   background-size: cover;
+  
   background-position:center;
   background-color: var(--primary);
-  color: burlywood;
-  font-variant-position:initial ;
-  align-content:;
-  font-size: 1.4em;
-  font-weight: bold;
+  color: rgb(38, 38, 32);
+  align-content:space-around;
+
   
   
 }
 footer{
-  background-image: url(https://blog.fasset.com/wp-content/uploads/2022/01/Blog-Featured-Image-Nov21-10-2.png);
+  height: 250px;
+  background-image: url(https://www.etoro.com/wp-content/uploads/2019/05/3775-Invitation-to-Deposit-blog-post-US-USA-blog_2.jpg);
   background-size: cover;
   background-position: center;
   background-color: var(--primary);
   color: var(--primary-inverse);
   font-size: 1.4em;
   font-weight: bold;
+  text-align:right;
+
+  
 }
 
 body {
@@ -52,11 +56,6 @@ font-size: 0,8em;
 text-align: right;
 }
 
-.return {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-}
 
 .grid {
   display: flex;
@@ -90,7 +89,7 @@ text-align: right;
 }  
 
 .quantity_to {
-  display:grid;
+  display:flex;
   justify-content: space-between;
   gap: 10px;
   height: 100%;
@@ -111,8 +110,6 @@ text-align: right;
 
 
 .boton-borrar{
-border-radius: 10px;  
-border-style: solid;  
 display: inline-flexbox;
 height: 20px;
 padding: 0;
@@ -120,36 +117,15 @@ vertical-align: top;
 width: 160px;
 margin-left: -400;
 margin-top: 100;
-
 }
 
 .boton-aceptar {  
-font-family: inherit;
-font-size: inherit;
-line-height: inherit;
 position:absolute;
-border: none;
-background: none;
-cursor: pointer;
-padding: 0;
-
-}
-
-
-.boton_volver {
-display: inline-block;
-height: 45px;
-padding: 0;
-margin-right: 0;
-width: 100px;
-margin-left: 350;
-margin-top: 50;
-
 }
 
 
 .boton-consultar {
-  
+position:absolute;
 display: inline-block;
 height: 65px;
 padding: 0;
@@ -157,7 +133,27 @@ margin-right: 0;
 width: 125px;
 margin-left: 350;
 margin-top: -85;
-
 }
 
+.lista-errores {
+  background-color: rgba(200, 0, 0, .25);
+  color: red;
+  border: solid 2px darkred;
+  font-weight: bold;
+  font-size: 0,8em;
+    
+  
+  }
+  
+  #positivo {
+  color: green;
+  }
+  
+  #negativo {
+  color: rgb(255, 51, 0)
+  }
+  
+  #cero {
+  color: rgb(215, 152, 35);
+  }
 

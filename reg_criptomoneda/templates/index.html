@@ -3,16 +3,16 @@
 {% block content %}
         <nav class="container">
             <ul>
-            <li>
-                    <a href="/purchase">Compra</a>
-                </li>
-                <li>
-                    <a href="/status">Status</a>
-                </li>
-            </ul>
+                <li><a href="/purchase" role="button" class="contrast">Comprar</a></li>
+              </ul>
+              <h2><strong>Movimientos</strong></h2>
+              <ul>
+                <li><a href="/status" role="button" class="contrast">Estado</a></li>
+              </ul>
         </nav>
+       
             <div class = "h2">
-                <h4>MOVIMIENTOS</h4>
+               
             </div>
             {% if movements %}
             <table role="grid">
@@ -38,13 +38,13 @@
                     <td>{{movement.moneda_from}}</td>
                     <td>{{movement.cantidad_from}}</td>
                     <td>{{movement.moneda_to}}</td>
-                    <td>{{"{:,.5f}".format(movement.cantidad_to)}}</td>
-                    <td>{{"{:,.5f}".format(movement.cantidad_from / movement.cantidad_to)}}</td>
+                    <td>{{"{:,.8f}".format(movement.cantidad_to)}}</td>
+                    <td>{{"{:,.8f}".format(movement.cantidad_from / movement.cantidad_to)}}</td>
                 </tr>
                 {% endfor %}
                 {% else%}
                 <tr>
-                    <td colspan="7" class="lista-vacia">NO HAY MOVIMIENTOS QUE MOSTRAR</td>
+                    <td colspan="7" class="lista-vacia">Sin movimientos</td>
                 </tr>
                 {% endif %}
                

@@ -3,19 +3,15 @@
 {% block content %}
 <nav class="container">
     <ul>
-    <li>
-            <a href="/">Inicio</a>
-        </li>
-        <li>
-            <a href="/status">Status</a>
-        </li>
-    </ul>
+        <li><a href="/" role="button" class="contrast">Inicio</a></li>
+      </ul>
+      <h2><strong>Comprar</strong></h2>
+      <ul>
+        <li><a href="/status" role="button" class="contrast">Estado</a></li>
+      </ul>
 </nav>
-<h1>Compra de Criptomonedas</h1>
-
 <article>
     <table>
-    <h2>Comprar criptomoneda</h2>
     <form action="/purchase" method="post">
             {{ form.csrf_token }}
 
@@ -50,20 +46,21 @@
                     <p class="error">{{ error }}</p>
                 {% endfor %}
             {% endif %}
+            
             </div> 
-        
-        
             <div class="quantity_to">
                 <label for="cantidad_to">Q: </label>
                 <p class="paper-label"> {{ quantity_to }}</p>
             </div>
         </div>
         
-        <div class="boton-consultar">
-            {{ form.calcular}}
+        <div class="boton-consultar",aria-busy="true">
+            {{form.calcular}}
+            <progress></progress>
             
+         
         </div>
-                
+          
                     
                 
                 
@@ -79,9 +76,11 @@
         <div class="boton-aceptar">
             {{form.borrar }}
         </div>
+        
 
         <div class="boton-borrar">
             {{form.aceptar}}
+            
         </div>    
     </form>
     </table>

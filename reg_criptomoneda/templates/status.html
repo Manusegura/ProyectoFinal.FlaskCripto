@@ -3,13 +3,48 @@
 {% block content %}
 <nav class="container">
     <ul>
-    <li>
-            <a href="/">Inicio</a>
-        </li>
-        <li>
-            <a href="/purchase">Compra</a>
-        </li>
-    </ul>
+        <li><a href="/" role="button" class="contrast">Inicio</a></li>
+      </ul>
+      <h2><strong>Estado de inversión</strong></h2>
+      <ul>
+        <li><a href="/purchase" role="button" class="contrast">Comprar</a></li>
+      </ul>
 </nav>
+<table>
+    <div class = "h2">
+        <thead>
+        <tr>
+        <form class="status" action="/purchase" method="GET">
+            <div class="grid">
+                Invertido: {{total_euros_invertidos}} 
+            </div>
+
+            <div class="grid">
+                Recuperado: {{recuperado}} 
+            </div>
+
+            <div class="grid">
+                Valor de compra: {{saldo_euros_invertidos}} 
+            </div>
+            
+            <div class="grid">
+                {% if valor_actual %}
+                    {% if valor_actual >= total_euros_invertidos %}
+        
+                    <p> Valor Actual:<span id = positivo>{{valor_actual}}</span></p>
+        
+                    {% elif valor_actual == total_euros_invertidos %}
+                    <p> Valor Actual: <span id = cero>{{valor_actual}}</span></p>
+        
+                    {% else %}
+                    <p> Valor Actual: <span id = negativo>{{valor_actual}}</span></p>
+        
+                    {% endif %}
+                {% endif %}
+    
+            </div>  
+        </form>
+      
+</table>
 
 {% endblock %}

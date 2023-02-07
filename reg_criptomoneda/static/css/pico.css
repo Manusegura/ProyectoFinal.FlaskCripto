@@ -31,6 +31,9 @@
   --form-label-font-weight: var(--font-weight);
   --transition: 0.2s ease-in-out;
   --modal-overlay-backdrop-filter: blur(0.25rem);
+  
+ 
+  
 }
 @media (min-width: 576px) {
   :root {
@@ -212,18 +215,18 @@ kbd {
   --h4-color: #374956;
   --h5-color: hsl(205deg, 20%, 32%);
   --h6-color: #4d606d;
-  --muted-color: hsl(205deg, 10%, 50%);
+  --muted-color: rgba(38, 40, 41, 0.973);
   --muted-border-color: hsl(205deg, 20%, 94%);
-  --primary: hsl(195deg, 85%, 41%);
-  --primary-hover: hsl(195deg, 90%, 32%);
-  --primary-focus: rgba(16, 149, 193, 0.125);
+  --primary: hsl(150, 2%, 19%);
+  --primary-hover: rgb(83, 87, 88);
+  --primary-focus: rgb(69, 69, 69);
   --primary-inverse: #fff;
   --secondary: hsl(205deg, 15%, 41%);
   --secondary-hover: hsl(205deg, 20%, 32%);
-  --secondary-focus: rgba(89, 107, 120, 0.125);
+  --secondary-focus: rgba(59, 60, 61, 0.932);
   --secondary-inverse: #fff;
-  --contrast: hsl(205deg, 30%, 15%);
-  --contrast-hover: #000;
+  --contrast: rgb(55, 55, 55);
+  --contrast-hover: rgb(52, 52, 52);
   --contrast-focus: rgba(89, 107, 120, 0.125);
   --contrast-inverse: #fff;
   --mark-background-color: #fff2ca;
@@ -232,7 +235,7 @@ kbd {
   --del-color: #c62828;
   --blockquote-border-color: var(--muted-border-color);
   --blockquote-footer-color: var(--muted-color);
-  --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --button-box-shadow: 0 0 0 rgb(63, 63, 63);
   --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --form-element-background-color: transparent;
   --form-element-border-color: hsl(205deg, 14%, 68%);
@@ -320,8 +323,8 @@ kbd {
     --h6-color: #afbbc4;
     --muted-color: hsl(205deg, 10%, 50%);
     --muted-border-color: #1f2d38;
-    --primary: hsl(195deg, 85%, 41%);
-    --primary-hover: hsl(195deg, 80%, 50%);
+    --primary: rgb(12, 12, 12);
+    --primary-hover: rgb(215, 226, 229);
     --primary-focus: rgba(16, 149, 193, 0.25);
     --primary-inverse: #fff;
     --secondary: hsl(205deg, 15%, 41%);
