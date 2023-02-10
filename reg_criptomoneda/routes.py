@@ -31,11 +31,13 @@ def compra():
         moneda_from = form.coin_from.data
         moneda_to = form.coin_to.data
         cantidad_from = form.quantity_from.data
+        if cantidad_from is None:
+             cantidad_from = 0
         cantidad_from = float(round(cantidad_from, 8))
         saldo = calcular_saldo(moneda_from)
 
         if cantidad_from <= 0.00001 or cantidad_from >= 99999999:
-                flash("·Por favor, introduzca un numero positivo")
+                flash("·Por favor, debe introducir un número y que este sea positivo")
                 return render_template("purchase.html", form=form)  
         if moneda_from == moneda_to:
                 flash("·Debes seleccionar dos monedas diferentes")  
@@ -73,9 +75,6 @@ def compra():
                      flash("Por favor, debe pulsar previamente calcular")
                     return render_template("purchase.html", form=form)
 
-
-           
-            
         except APIError as err:
             flash(err)
             return render_template("purchase.html", form=form)
@@ -104,7 +103,7 @@ def estado():
             
             valor_actual = consulta_total_cripto()#Valor actual 
             valor_actual = round(valor_actual, 2)#Valor actual redondeado
-            ganancia = round(valor_actual - saldo_euros_invertidos,2)
+            ganancia = round(valor_actual - saldo_euros_invertidos,2)#Ganancia
           
 
             return render_template("status.html",total_euros_invertidos=total_euros_invertidos,saldo_euros_invertidos=saldo_euros_invertidos,recuperado=recuperado,valor_actual=valor_actual,ganancia=ganancia)
