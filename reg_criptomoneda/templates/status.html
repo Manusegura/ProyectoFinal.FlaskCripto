@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <nav class="container">
     <ul>
         <li><a href="/" role="button" class="contrast">Inicio</a></li>
@@ -29,11 +30,11 @@
             
             <div class="grid">
                 {% if valor_actual %}
-                    {% if valor_actual >= total_euros_invertidos %}
+                    {% if valor_actual >= saldo_euros_invertidos %}
         
                     <p> Valor Actual:<span id = positivo>{{valor_actual}}</span></p>
         
-                    {% elif valor_actual == total_euros_invertidos %}
+                    {% elif valor_actual == saldo_euros_invertidos %}
                     <p> Valor Actual: <span id = cero>{{valor_actual}}</span></p>
         
                     {% else %}
@@ -43,6 +44,24 @@
                 {% endif %}
     
             </div>  
+
+            <div class="grid">
+                {% if ganancia %}
+                  {% if ganancia > 0 %}
+      
+                  <p> <strong>Ganancia / Perdida:</strong> <span id = ganancia> <strong>{{ ganancia }}</strong></span></p>
+      
+                  {% elif ganancia == 0 %}
+                  <p> <strong>Ganancia / Perdida:</strong> <span id = igual><strong>{{ ganancia }}</strong></span></p>
+      
+                  {% else %}
+                  <p> <strong>Ganancia / Perdida:</strong> <span id = perdida><strong>{{ ganancia }}</strong></span></p>
+      
+                  {% endif %}
+                {% endif %}
+      
+                
+                </div>
         </form>
       
 </table>

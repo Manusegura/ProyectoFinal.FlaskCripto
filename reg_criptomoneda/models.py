@@ -76,18 +76,7 @@ class APIError(Exception):
             error = "Ha ocurrido un error. Por favor revise su conexión a Internet e inténtelo de nuevo mas tarde."
         super().__init__(error)    
 
-#Calcular si se dispone de saldo para la compra de criptomonedas
-def calcular_saldo(monedas):
-    datos_compras = total_from(monedas)
-    datos_ventas = total_to(monedas)
-    if datos_ventas[0][0] == None and datos_compras[0][0] == None:
-        return 0
-    elif datos_ventas[0][0] == None:
-        return datos_compras[0][0]
-    elif datos_compras[0][0] == None:
-        return 0
-    else:
-        return datos_compras[0][0] - datos_ventas[0][0]
+
 
 # Calcular el valor total de las monedas en EUR
 def consulta_total_cripto():
@@ -133,24 +122,37 @@ def select_to():
             consulta.con.close()
             return select      
 
-#Suma total en moneda_from
-def total_from(monedas):
-            total = Conexion("SELECT sum(cantidad_from) FROM movimientos WHERE moneda_from = '" + \
-                monedas + "'")
-            resultado = total.cur.fetchall()
-            total.con.commit()
-            total.con.close()
-            return resultado
-#Suma total en moneda_to
-def total_to(monedas):
-            total = Conexion("SELECT sum(cantidad_to) FROM movimientos WHERE moneda_to = '" + \
-                monedas + "'")
-            resultado = total.cur.fetchall()
-            total.con.commit()
-            total.con.close()
-            return resultado       
 
 
+#Suma total de moneda_to en cantidad_to
+def consultar_saldo_compras(monedas):
+        saldo = Conexion("SELECT sum(cantidad_to) FROM movimientos WHERE moneda_to = '" + \
+            monedas + "'")
+        resultado = saldo.cur.fetchone()
+        saldo.con.commit()
+        saldo.con.close()
+        return resultado
+#Suma total de moneda_from en cantidad_from
+def consultar_saldo_ventas(monedas):
+        saldo = Conexion("SELECT sum(cantidad_from) FROM movimientos WHERE moneda_from = '" + \
+            monedas + "'")
+        resultado = saldo.cur.fetchone()
+        saldo.con.commit()
+        saldo.con.close()
+        return resultado        
+
+#Calcular si se dispone de saldo para la compra de criptomonedas
+def calcular_saldo(monedas):
+        datos_compras = consultar_saldo_compras(monedas)
+        datos_ventas = consultar_saldo_ventas(monedas)
+        if datos_ventas[0] == None and datos_compras[0] == None:
+            return 0
+        elif datos_ventas[0] == None:
+            return datos_compras[0]
+        elif datos_compras[0] == None:
+            return 0
+        else:
+            return datos_compras[0] - datos_ventas[0]
 
                 
 

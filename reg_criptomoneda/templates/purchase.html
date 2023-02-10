@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <nav class="container">
     <ul>
         <li><a href="/" role="button" class="contrast">Inicio</a></li>
@@ -19,21 +20,13 @@
             <div class="coin_from">
             {{ form.coin_from.label }}
             {{ form.coin_from }}        
-            {% if form.coin_from.errors %}
-                {% for error in form.coin_from.errors %}
-                <p class="error">{{ error }}</p>
-                {% endfor %}
-            {% endif %}
+            
             </div>
 
             <div class="coin_to">
             {{ form.coin_to.label }}
             {{ form.coin_to }}
-            {% if form.coin_to.errors %}
-                {% for error in form.coin_from.errors %}
-                    <p class="error">{{ error }}</p>
-                {% endfor %}
-            {% endif %}
+           
             </div>
         </div>
 
@@ -41,12 +34,7 @@
             <div class="quantity_from">
             {{ form.quantity_from.label }}
             {{ form.quantity_from }}
-            {% if form.quantity_from.errors %}
-                {% for error in form.quantity_from.errors %}
-                    <p class="error">{{ error }}</p>
-                {% endfor %}
-            {% endif %}
-            
+
             </div> 
             <div class="quantity_to">
                 <label for="cantidad_to">Q: </label>
@@ -54,33 +42,15 @@
             </div>
         </div>
         
-        <div class="boton-consultar",aria-busy="true">
+        <div class="boton-calcular",aria-busy="true">
             {{form.calcular}}
             <progress></progress>
-            
-         
         </div>
-          
-                    
-                
-                
-            
-            </div>
-        <div class="grid">
-            <div class="pu">
-            <label for="precio_unitario">P.U: </label>
-            <p class="paper-label"> {{ PU }}</p>
-
-            </div>    
-
-        <div class="boton-aceptar">
-            {{form.borrar }}
-        </div>
-        
-
-        <div class="boton-borrar">
+             
+        <div 
+            class="boton-aceptar">
             {{form.aceptar}}
-            
+            <div>
         </div>    
     </form>
     </table>

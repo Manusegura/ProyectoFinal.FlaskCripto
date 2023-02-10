@@ -1,6 +1,8 @@
+from datetime import date
 from flask_wtf import FlaskForm
-from wtforms import SelectField,TimeField,DateField,FloatField,HiddenField,SubmitField
-from wtforms.validators import DataRequired
+from wtforms import SelectField,TimeField,DateField,FloatField,HiddenField,SubmitField,Label
+from wtforms.validators import DataRequired,ValidationError,NumberRange
+
 
 class MovementsForm(FlaskForm):
     id = HiddenField()
@@ -25,5 +27,5 @@ class MovementsForm(FlaskForm):
     
     borrar = SubmitField("Borrar")
 
-    calcular= SubmitField("calcular")
+    calcular= SubmitField("Calcular")
    
